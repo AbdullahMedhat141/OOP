@@ -20,13 +20,15 @@ function Student(name, age, initialGrade) {
   if (initialGrade !== undefined) {
     this.setGrade(initialGrade);
   }
-
-  this.introduce = function () {
-    console.log(
-      `Hi, my name is ${this.name}, I'm ${this.age} years old, and I'm in grade ${grade}.`
-    );
-  };
 }
+
+Student.prototype.introduce = function () {
+  console.log(
+    `Hi, my name is ${this.name}, I'm ${
+      this.age
+    } years old, and I'm in grade ${this.getGrade()}.`
+  );
+};
 
 const student1 = new Student("Ali", 20, "A");
 student1.introduce();
